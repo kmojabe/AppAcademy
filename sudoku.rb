@@ -68,8 +68,7 @@ class SudokuGame
   def valid_pos?(pos)
     pos.is_a?(Array) &&
       pos.length == 2 &&
-      pos.all? { |x| x.between?(0, board.size - 1) } #&&
-      # board[pos].value == 0
+      pos.all? { |x| x.between?(0, board.size - 1) }
   end
 
   def valid_val?(val)
