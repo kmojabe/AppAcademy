@@ -12,7 +12,7 @@ class SudokuGame
 
   def get_pos
     pos = nil
-    raise "This is the easiest error you're gonna get, chief.  It only gets harder going forward.  Remove me (or comment me out), re-run the code to make sure it works, and go on to the next level"
+    #raise "This is the easiest error you're gonna get, chief.  It only gets harder going forward.  Remove me (or comment me out), re-run the code to make sure it works, and go on to the next level"
 
     until pos && valid_pos?(pos)
       puts "Please enter a position on the board (e.g., '3,4')"
@@ -68,7 +68,8 @@ class SudokuGame
   def valid_pos?(pos)
     pos.is_a?(Array) &&
       pos.length == 2 &&
-      pos.all? { |x| x.between?(0, board.size - 1) }
+      pos.all? { |x| x.between?(0, board.size - 1) } #&&
+      # board[pos].value == 0
   end
 
   def valid_val?(val)
